@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM — Cardápio de Experiências</title>
+    <meta name="description" content="AURUM — cardápio assinado com pratos sazonais, fotografia editorial e experiências gastronômicas. Veja nosso menu e reserve.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: '#0B0B0B',
+                        gold: '#D4AF37',
+                        gray: '#BDB6AE',
+                        white: '#F5F5F5',
+                        burgundy: '#7B1F1F',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(180deg, rgba(212,175,55,0.95), rgba(150,115,30,0.85));
+        }
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .menu-card:hover .menu-overlay {
+            opacity: 1;
+        }
+        .btn-gold:hover {
+            box-shadow: 0 6px 20px rgba(212,175,55,0.12);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <img src="http://static.photos/food/1200x630/1" alt="Pratos sofisticados do restaurante AURUM" class="absolute inset-0 w-full h-full object-cover">
+        <div class="container mx-auto px-6 relative z-20 text-center" data-aos="fade-up">
+            <h1 class="text-6xl md:text-8xl font-display mb-4">AURUM</h1>
+            <p class="text-xl md:text-2xl text-gold mb-8">Sabores que merecem ser vistos.</p>
+            <p class="max-w-2xl mx-auto mb-12 text-gray">Uma curadoria de pratos assinados. Ingredientes escolhidos, finalizações que surpreendem.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="btn-gold bg-gold text-black px-8 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all">Ver Cardápio</a>
+                <a href="#" class="border border-gold text-gold px-8 py-3 rounded-sm font-medium hover:bg-gold hover:bg-opacity-10 transition-all">Reservar Mesa</a>
+            </div>
+            <p class="text-xs text-gray mt-4">Sem distrações — só o prato.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-display mb-4">Explore nosso cardápio</h2>
+                <p class="text-gray max-w-2xl mx-auto">Uma seleção cuidadosa de pratos que celebram ingredientes excepcionais e técnicas refinadas.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12" data-aos="fade-up">
+                <button class="px-4 py-2 bg-gold text-black">Todos</button>
+                <button class="px-4 py-2 border border-gray text-gray hover:border-gold hover:text-gold">Entradas</button>
+                <button class="px-4 py-2 border border-gray text-gray hover:border-gold hover:text-gold">Principais</button>
+                <button class="px-4 py-2 border border-gray text-gray hover:border-gold hover:text-gold">Sobremesas</button>
+                <button class="px-4 py-2 border border-gray text-gray hover:border-gold hover:text-gold">Bebidas</button>
+                <button class="px-4 py-2 border border-gray text-gray hover:border-gold hover:text-gold">
+                    <i data-feather="leaf" class="w-4 h-4 inline mr-1"></i> Vegetariano
+                </button>
+                <button class="px-4 py-2 border border-gray text-gray hover:border-gold hover:text-gold">
+                    <i data-feather="x" class="w-4 h-4 inline mr-1"></i> Sem glúten
+                </button>
+                <button class="px-4 py-2 border border-gray text-gray hover:border-gold hover:text-gold">
+                    <i data-feather="star" class="w-4 h-4 inline mr-1"></i> Sugestão do Chef
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Entradas -->
+                <div class="menu-card relative overflow-hidden transition-all duration-300" data-aos="fade-up" data-category="entradas">
+                    <div class="aspect-square bg-black">
+                        <img src="http://static.photos/food/800x800/1" alt="Tartar de Atum Bluefin" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="menu-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+                        <p class="text-gray mb-2">Atum fresco picado, emulsão de yuzu, gema curada, pó de azeitona. Textura fresca e cítrica.</p>
+                        <p class="text-xs text-gold">Harmonização: Sake seco</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-display">Tartar de Atum Bluefin</h3>
+                            <span class="text-gold">R$ 56,00</span>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <span class="text-xs px-2 py-1 border border-gold text-gold">GF</span>
+                            <span class="text-xs px-2 py-1 border border-gold text-gold">
+                                <i data-feather="star" class="w-3 h-3 inline"></i> Chef
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principais -->
+                <div class="menu-card relative overflow-hidden transition-all duration-300" data-aos="fade-up" data-category="principais">
+                    <div class="aspect-square bg-black">
+                        <img src="http://static.photos/food/800x800/2" alt="Risoto de Lagosta com Açafrão" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="menu-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+                        <p class="text-gray mb-2">Arborio perlado, caldo de lagosta, lâminas de lagosta finalizadas no manteiga de ervas.</p>
+                        <p class="text-xs text-gold">Harmonização: Chardonnay encorpado</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-display">Risoto de Lagosta com Açafrão</h3>
+                            <span class="text-gold">R$ 128,00</span>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <span class="text-xs px-2 py-1 border border-gold text-gold">
+                                <i data-feather="star" class="w-3 h-3 inline"></i> Chef
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sobremesas -->
+                <div class="menu-card relative overflow-hidden transition-all duration-300" data-aos="fade-up" data-category="sobremesas">
+                    <div class="aspect-square bg-black">
+                        <img src="http://static.photos/food/800x800/3" alt="Fondant de Chocolate 70%" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="menu-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+                        <p class="text-gray mb-2">Coração líquido, sorvete de baunilha artesanal, flor de sal.</p>
+                        <p class="text-xs text-gold">Harmonização: Vinho do Porto</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-display">Fondant de Chocolate 70%</h3>
+                            <span class="text-gold">R$ 36,00</span>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <span class="text-xs px-2 py-1 border border-gold text-gold">
+                                <i data-feather="leaf" class="w-3 h-3 inline"></i> Veg
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef's Selection -->
+    <section class="py-20 bg-black/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-display mb-12 text-center" data-aos="fade-up">Assinaturas do Chef</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-black/70 p-8 border border-gray/20" data-aos="fade-up">
+                    <h3 class="text-xl font-display mb-4">Tartar de Atum Bluefin</h3>
+                    <p class="text-gray mb-6">Atum fresco picado, emulsão de yuzu, gema curada, pó de azeitona.</p>
+                    <a href="#" class="text-gold flex items-center group">
+                        Ver no cardápio
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-black/70 p-8 border border-gray/20" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-display mb-4">Risoto de Lagosta</h3>
+                    <p class="text-gray mb-6">Arborio perlado, caldo de lagosta, lâminas de lagosta finalizadas no manteiga de ervas.</p>
+                    <a href="#" class="text-gold flex items-center group">
+                        Ver no cardápio
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-black/70 p-8 border border-gray/20" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-display mb-4">Lombo de Cordeiro</h3>
+                    <p class="text-gray mb-6">Lombo selado, redução de vinho, purê cremoso de raiz.</p>
+                    <a href="#" class="text-gold flex items-center group">
+                        Ver no cardápio
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-display mb-8">Filosofia AURUM</h2>
+            <p class="text-gray mb-6">Ingredientes sazonais de pequenos produtores, técnicas tradicionais reinventadas e apresentação impecável.</p>
+            <p class="text-gray mb-6">Cada prato é uma composição de texturas, temperaturas e perfumes cuidadosamente equilibrados.</p>
+            <p class="text-gray">Nossa equipe trabalha com paixão para transformar ingredientes extraordinários em experiências memoráveis.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 py-12 border-t border-gray/20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-display mb-4">AURUM</h3>
+                    <p class="text-gray text-sm">Cardápio de Experiências</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-4">Contato</h4>
+                    <p class="text-gray text-sm mb-2">Rua Harmonia, 158 — Vila Madalena</p>
+                    <p class="text-gray text-sm mb-2">São Paulo, SP</p>
+                    <p class="text-gray text-sm mb-4">11 98765-4321</p>
+                    <a href="#" class="text-gold text-sm flex items-center">
+                        <i data-feather="message-square" class="w-4 h-4 mr-2"></i> WhatsApp
+                    </a>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-4">Horário</h4>
+                    <p class="text-gray text-sm mb-2">Terça a Quinta: 19h — 23h</p>
+                    <p class="text-gray text-sm mb-2">Sexta e Sábado: 19h — 00h</p>
+                    <p class="text-gray text-sm">Domingo: 18h — 22h</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-4">Redes</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray hover:text-gold transition-colors">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray hover:text-gold transition-colors">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="text-gray text-sm mt-6 inline-block hover:text-gold transition-colors">Política de alergênicos</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray/20 mt-12 pt-8 text-center text-gray text-sm">
+                <p>© 2023 AURUM. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6 hidden">
+        <div class="bg-black max-w-4xl w-full border border-gray/20 relative">
+            <button class="absolute top-4 right-4 text-gray hover:text-gold">
+                <i data-feather="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="aspect-[4/3] bg-black">
+                    <img src="http://static.photos/food/1200x900/1" alt="Prato selecionado" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-2xl font-display">Tartar de Atum Bluefin</h3>
+                        <span class="text-gold text-xl">R$ 56,00</span>
+                    </div>
+                    
+                    <p class="text-gray mb-6">Atum fresco picado, emulsão de yuzu, gema curada, pó de azeitona. Textura fresca e cítrica com finalização perfumada.</p>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Ingredientes principais</h4>
+                        <p class="text-gray text-sm">Atum bluefin, yuzu, gema de ovo, azeitona preta, sal marinho, pimenta rosa.</p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div>
+                            <h4 class="font-medium mb-1">Tempo</h4>
+                            <p class="text-gray text-sm">12 min</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Harmonização</h4>
+                            <p class="text-gray text-sm">Sake seco</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Dieta</h4>
+                            <p class="text-gray text-sm">Sem glúten</p>
+                        </div>
+                    </div>
+                    
+                    <p class="italic text-gray mb-8">"O equilíbrio entre a gordura do atum e a acidez do yuzu cria uma experiência única." — Chef</p>
+                    
+                    <div class="flex gap-4">
+                        <button class="bg-gold text-black px-6 py-3 flex-1 text-center hover:bg-opacity-90 transition-all">Pedir agora</button>
+                        <button class="border border-gold text-gold px-6 py-3 flex-1 text-center hover:bg-gold hover:bg-opacity-10 transition-all">Reservar</button>
+                    </div>
+                    
+                    <a href="#" class="text-xs text-gray mt-4 inline-block hover:text-gold">Pergunte ao garçom sobre alergias.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Modal functionality
+        const menuCards = document.querySelectorAll('.menu-card');
+        const modal = document.querySelector('.fixed');
+        const closeModal = modal.querySelector('button');
+        
+        menuCards.forEach(card => {
+            card.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.flex-wrap button');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-gold', 'text-black');
+                    btn.classList.add('border', 'border-gray', 'text-gray');
+                });
+                
+                // Add active class to clicked button
+                button.classList.remove('border', 'border-gray', 'text-gray');
+                button.classList.add('bg-gold', 'text-black');
+                
+                // Filter logic would go here
+            });
+        });
+        
+        // Set first filter button as active
+        filterButtons[0].classList.remove('border', 'border-gray', 'text-gray');
+        filterButtons[0].classList.add('bg-gold', 'text-black');
+    </script>
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "AURUM",
+      "servesCuisine": "Contemporary",
+      "menu": [
+        {
+          "@type": "MenuSection",
+          "name": "Entradas",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Tartar de Atum Bluefin",
+              "description": "Atum fresco picado, emulsão de yuzu, gema curada, pó de azeitona. Textura fresca e cítrica.",
+              "offers": {
+                "@type": "Offer",
+                "price": "56.00",
+                "priceCurrency": "BRL"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Pratos Principais",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Risoto de Lagosta com Açafrão",
+              "description": "Arborio perlado, caldo de lagosta, lâminas de lagosta finalizadas no manteiga de ervas.",
+              "offers": {
+                "@type": "Offer",
+                "price": "128.00",
+                "priceCurrency": "BRL"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Sobremesas",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Fondant de Chocolate 70%",
+              "description": "Coração líquido, sorvete de baunilha artesanal, flor de sal.",
+              "offers": {
+                "@type": "Offer",
+                "price": "36.00",
+                "priceCurrency": "BRL"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</body>
+</html>
